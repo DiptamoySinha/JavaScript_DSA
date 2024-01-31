@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary search Tree</title>
+</head>
+<body>
+
+    <h1>Binary Search Tree</h1>
+    
+    <script>
+        function Node(val)
+        {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
+
+        class Tree{
+
+            constructor()
+            {
+                this.root = null;
+            }
+
+            makeTree(val)
+            {
+                if(this.root == null)
+                {
+                    this.root = new Node(val);
+                }
+                else{
+                    this.insert(this.root, val);
+                }
+            }
+
+            insert(node, val)
+            {
+                if(node.val > val)
+                {
+                    if(node.left == null)
+                    {
+                        node.left = new Node(val);
+                    }
+                    else
+                    {
+                        this.insert(node.left, val);
+                    }
+                }
+                else
+                {
+                    if(node.right == null)
+                    {
+                        node.right = new Node(val);
+                    }
+                    else
+                    {
+                        this.insert(node.right, val);
+                    }
+                }
+            }
+        }
+
+        const t1 = new Tree()
+        t1.makeTree(10);
+        t1.makeTree(5);
+        t1.makeTree(15);
+        t1.makeTree(2);
+        t1.makeTree(7);
+
+        console.log(t1);
+    </script>
+</body>
+</html>

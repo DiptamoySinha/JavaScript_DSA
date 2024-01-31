@@ -31,13 +31,13 @@ const deleteNode = function(head, val)
 const deleteNodeByIndex = function(head, indx)
 {
     let temp = head;
-    if(indx == 0)
+    if(indx == 1)
     {
         temp = temp.next;
         return temp;
     }
 
-    let counter = 0;
+    let counter = 1;
     while(counter < indx-1)
     {
         temp = temp.next;
@@ -55,6 +55,6 @@ let head = createLinkedList(10,20,30,40)
 console.log(`before delete: ${traverse(head)} `)
 
 // head = deleteNode(head, 20);
-head = deleteNodeByIndex(head, 0);
+head = deleteNodeByIndex(head, 1);
 
 console.log(`after delete: ${traverse(head)} `)
